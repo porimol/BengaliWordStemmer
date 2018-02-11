@@ -1,6 +1,6 @@
 # coding=utf-8
 # Statement for enabling the development environment
-DEBUG = True
+DEBUG = False
 
 # Define the application directory
 from os.path import abspath, dirname
