@@ -9,7 +9,7 @@ class BengaliStemmer:
         verb_suffixes = [
             'ছে', 'ছি', 'চ্ছি', 'ছিলা', 'ছিলাম', 'ছিলেন',
             'ছেন', 'লাম', 'ভাবে', 'ন', 'না', 'নো', 'নি', 'তে', 'তা',
-            'তম', 'তিস', 'লি', 'য়া', 'কা', 'টা', 'ও'
+            'তম', 'তিস', 'লি', 'য়া', 'কা', 'টা', 'ও', 'র'
         ]  # 'লেন', 'ন', 'নে',
         verb_suffixes_dict = {suffix: len(suffix) for index, suffix in enumerate(verb_suffixes)}
         verb_sorted_suffixes = sorted(verb_suffixes_dict.items(), key=operator.itemgetter(1), reverse=True)
