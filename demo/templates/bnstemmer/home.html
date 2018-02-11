@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <div class="blog-post">
+        <form action="/" method="POST">
+            <div class="form-group">
+                <h3 for="bengali_document">Input Document</h3>
+                <textarea
+                        class="form-control"
+                        id="bengali_document"
+                        name="bengali_document"
+                        rows="10"
+                        placeholder="সন্ধ্যা নামতেই ঘরে আলো জ্বালাতে হয় আয়েশা বেগমের। আছে বাড়ির প্রাত্যহিক কাজকর্ম; আবার ছেলেমেয়ের পড়াশোনা। এ ক্ষেত্রে ভরসা ছিল কেবল কেরোসিনের কুপিবাতি কিংবা হারিকেন। কারণ, এ তল্লাটে কোনো বিদ্যুৎ ছিল না...">{% if stem_response %}{{ stem_response['original_document'] }}{% endif %}</textarea>
+                <small id="bengali_document_help" class="form-text text-muted">Please past only bengali document in the textarea</small>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="cursor:pointer">Stem Generate</button>
+            <hr/>
+        </form>
+    </div>
+
+    {% if stem_response %}
+        <div class="blog-post">
+            <div class="form-group">
+                <h3 for="sentence_token_content">Tokenized Sentences</h3>
+                <textarea class="form-control" id="sentence_token_content" name="sentence_token_content" rows="5" readonly>{{ stem_response['tokenized_sentences'] }}</textarea>
+            </div>
+        </div>
+
+        <div class="blog-post">
+            <div class="form-group">
+                <h3 for="word_token_content">Tokenized Words</h3>
+                <textarea class="form-control" id="word_token_content" name="word_token_content" rows="5" readonly>{{ stem_response['tokenized_words'] }}</textarea>
+            </div>
+        </div>
+
+        <div class="blog-post">
+            <form action="{{ url_for('bnstemmer.word_stem_download') }}" method="POST">
+            <div class="form-group">
+                <h3 for="stem_content">Stem Word List</h3>
+                <textarea class="form-control" id="stem_content" name="summery_content" rows="10" readonly>{{ stem_response['stem_words'] }}</textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="cursor:pointer">Download Stem</button>
+            </form>
+        </div>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}">
+
+    <title>Bengali Word Stemming Tool::NLP</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <header>
+      <div class="blog-masthead">
+        <div class="container">
+          <nav class="nav">
+            <a class="nav-link active" href="">Home</a>
+            <a class="nav-link" href="#">New features</a>
+            <a class="nav-link" href="#">To Do List</a>
+            <a class="nav-link" href="https://github.com/porimol/BengaliWordStemmer" target="_blank">GitHub</a>
+          </nav>
+        </div>
+      </div>
+
+      <div class="blog-header">
+        <div class="container">
+          <h1 class="blog-title">Bengali Word Stemming Tool</h1>
+          <p class="lead blog-description">I'm not a smart bengali word stemmer as you think, but I'll server you my best performance!</p>
+        </div>
+      </div>
+    </header>
+
+    <main role="main" class="container">
+
+      <div class="row">
+
+        <div class="col-sm-8 blog-main">
+
+          {% block body %}{% endblock %}
+
+        </div><!-- /.blog-main -->
+        <!-- /.navbar-static-side -->
+        {% include 'sidebar.html' %}
+
+      </div><!-- /.row -->
+
+    </main><!-- /.container -->
+
+    <footer class="blog-footer">
+      <p>&copy; <a href="https://github.com/porimol/" target="_blank">2018, Porimol Chandro</a></p>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="{{ url_for('static', filename='jquery/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+  </body>
+</html>
